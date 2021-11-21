@@ -28,4 +28,8 @@ public class UsuarioDAO {
 
     }
 
+    public Boolean esUsuarioDeLaAplicacion(){
+        return true;
+    }
+
 }

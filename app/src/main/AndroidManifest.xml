@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinal">
-        <activity android:name=".RegistroUsuario"></activity>
+        <activity android:name=".CarroCompra"></activity>
+        <activity android:name=".ListadoProducto" />
+        <activity android:name=".ConfiguracionUsuario" />
+        <activity android:name=".RegistroUsuario" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

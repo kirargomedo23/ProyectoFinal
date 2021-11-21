@@ -16,4 +16,15 @@
     <string name="pr_txt_usuario">Usuario</string>
     <string name="pr_txt_contrasenia">Contraseña</string>
     <string name="pr_btn_registrarme">Registrarme</string>
+
+
+
+    <string name="cu_tv_titulo">Actualizar informacion</string>
+    <string name="cu_txt_nombre">Nombre</string>
+    <string name="cu_txt_apellido">Apellido</string>
+    <string name="cu_txt_direccion">Dirreción</string>
+    <string name="cu_number_telefono">Telefono</string>
+    <string name="cu_rb_hombre">Hombre</string>
+    <string name="cu_rb_mujer">Mujer</string>
+    <string name="cu_btn_actualizar">Actualizar</string>
 </resources>

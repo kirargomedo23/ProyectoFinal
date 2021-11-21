@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.proyectofinal.ENTIDADES.Usuario;
+import com.example.proyectofinal.UTILS.Validaciones;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +38,15 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        Intent intent = new Intent(this, RegistroUsuario.class); // Debería irme a listado producto.
+        Validaciones validacion = new Validaciones();
+
+        if(!validacion.esValidoTexto(user.getUsuario())){
+            Toast.makeText(this,"No se admite números. " +
+                    "Por favor, intente nuevamente",1200).show();
+            return;
+        }
+
+        Intent intent = new Intent(this, ListadoProducto.class);
         startActivity(intent);
 
 
