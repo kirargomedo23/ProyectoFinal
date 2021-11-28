@@ -109,58 +109,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtApellidos" />
 
-    <EditText
-        android:id="@+id/txtTelefono"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/caja_personalizada"
-        android:ems="10"
-        android:hint="@string/pr_number_telefono"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        android:textSize="15sp"
-        android:drawableStart="@drawable/icono_creartelefono_personalizado"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
-
-    <RadioGroup
-        android:id="@+id/rgSexo"
-        android:layout_width="288dp"
-        android:layout_height="99dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTelefono">
-
-        <RadioButton
-            android:id="@+id/pr_rb_hombre"
-            android:layout_width="208dp"
-            android:layout_height="wrap_content"
-            android:text="@string/pr_rb_hombre" />
-
-        <RadioButton
-            android:id="@+id/pr_rb_mujer"
-            android:layout_width="209dp"
-            android:layout_height="wrap_content"
-            android:text="@string/pr_rb_mujer" />
-    </RadioGroup>
-
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="148dp"
         android:text="@string/pr_btn_registrarme"
         android:textColor="@color/secundarioApp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgSexo"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

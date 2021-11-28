@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.proyectofinal.DAO.UsuarioDAO;
@@ -14,10 +15,9 @@ import com.example.proyectofinal.ENTIDADES.Usuario;
 
 public class RegistroUsuario extends AppCompatActivity {
 
-    EditText txtUsuario, txtContrasenia,txtNombre,txtApellidos,txtDireccion,txtTelefono;
-    RadioGroup rgSexo;
+    EditText txtUsuario, txtContrasenia,txtNombre,txtApellidos,txtDireccion;
     Button btnRegistrar;
-    Usuario usuario;
+    Usuario usu=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,9 @@ public class RegistroUsuario extends AppCompatActivity {
         txtNombre = findViewById(R.id.txtNombre);
         txtApellidos = findViewById(R.id.txtApellidos);
         txtDireccion = findViewById(R.id.txtDireccion);
-        txtTelefono = findViewById(R.id.txtTelefono);
-        rgSexo = findViewById(R.id.rgSexo);
+
+
+
         btnRegistrar = findViewById(R.id.btnRegistrar);
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +43,7 @@ public class RegistroUsuario extends AppCompatActivity {
                 if (capturarDatos()){
                     UsuarioDAO usuarioDAO = new UsuarioDAO(RegistroUsuario.this);
                     usuarioDAO.abrirBD();
-                    String mensaje = usuarioDAO.registrarUsuario(usuario);
+                    String mensaje = usuarioDAO.registrarUsuario(usu);
                     mostrarMensaje(mensaje);
 
                 }
@@ -53,7 +54,8 @@ public class RegistroUsuario extends AppCompatActivity {
     }
 
 
-    private void mostrarMensaje(){
+    private void mostrarMensaje(String mensaje){
+
 
         AlertDialog.Builder ventana = new AlertDialog.Builder(this);
         ventana.setTitle("Mensaje Informativo");
@@ -66,15 +68,16 @@ public class RegistroUsuario extends AppCompatActivity {
 
 
 
-
     private boolean capturarDatos(){ //METODO PARA VALIDAR
+
         String usuario = txtUsuario.getText().toString();
         String contrasenia = txtContrasenia.getText().toString();
         String nombre = txtNombre.getText().toString();
         String apellidos = txtApellidos.getText().toString();
         String direccion = txtDireccion.getText().toString();
-        String telefono = txtTelefono.getText().toString();
-        String sexo = rgSexo.getText().toString();
+
+
+
         boolean valida = true;
         //En los if estoy validando que hayan datos
         if(usuario.equals("")){
@@ -103,20 +106,19 @@ public class RegistroUsuario extends AppCompatActivity {
 
         }
 
-        if(telefono.equals("")){
-            txtTelefono.setError("El telefonp es Obligatorio =)");
-            valida = false;
 
-        }
 
-        /*if(sexo.equals("")){
-            rgSexo.setError("El sexo es Obligatorio =)");
-            valida = false;
 
-        }*/
         if(valida){
-            usuario = new Usuario(usuario,contrasenia,nombre,apellidos,direccion,telefono,String.valueOf(rgSexo));
+            usu = new Usuario(String.valueOf(txtUsuario), String.valueOf(txtContrasenia));
+            usu.setNombre( String.valueOf(txtNombre) );
+            usu.setApellido( String.valueOf(txtApellidos) );
+            usu.setDireccion( String.valueOf(txtDireccion) );
+
         }
+
+
+
 
         return  valida;
 

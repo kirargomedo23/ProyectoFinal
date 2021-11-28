@@ -22,9 +22,7 @@ public class UsuarioBD extends SQLiteOpenHelper {
                 " contrasenia TEXT NOT NULL,"+
                 " nombre TEXT NOT NULL, "+
                 " apellidos TEXT NOT NULL, "+
-                " direccion TEXT NOT NULL, "+
-                " telefono TEXT NOT NULL, "+
-                " sexo TEXT NOT NULL"+
+                " direccion TEXT NOT NULL "+
                 ");";
         db.execSQL(query);//EJECUTA EL QUERY
 

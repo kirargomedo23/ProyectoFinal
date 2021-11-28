@@ -6,8 +6,6 @@ public class Usuario {
     private String nombre;
     private String apellido;
     private String direccion;
-    private String sexo;
-    private String telefono;
     private String usuario;
     private String contrasenia;
 
@@ -15,6 +13,7 @@ public class Usuario {
         this.usuario = usuario;
         this.contrasenia = contrasenia;
     }
+
 
 
     public Integer getIdUsuario() {
@@ -47,22 +46,6 @@ public class Usuario {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
     }
 
     public String getUsuario() {

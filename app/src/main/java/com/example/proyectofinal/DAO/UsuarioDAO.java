@@ -33,9 +33,8 @@ public class UsuarioDAO {
             valores.put("nombre",usuario.getNombre());
             valores.put("apellidos",usuario.getApellido());
             valores.put("direccion",usuario.getDireccion());
-            valores.put("telefono",usuario.getTelefono());
-            valores.put("sexo",usuario.getSexo());
-            long resultado= db.insert(Constantes.NOMBRE_BD,null,valores);
+
+            long resultado= db.insert(Constantes.NOMBRE_TABLA,null,valores);
             if(resultado == -1){
                 mensaje= "Error al insertar";
 
